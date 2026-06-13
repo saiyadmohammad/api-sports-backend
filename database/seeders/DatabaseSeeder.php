@@ -13,9 +13,13 @@ class DatabaseSeeder extends Seeder
      * Seed the application's database.
      */
     public function run(): void
-    {
+    {   
+         $this->call([
+            PageSeeder::class,
+            SectionSeeder::class,
+        ]);
 
-        Page::factory(4)->has(Section::factory()->count(3), 'section')->create();
+       
    
 
         // \App\Models\User::factory(10)->create();

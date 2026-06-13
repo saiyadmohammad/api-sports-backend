@@ -1,13 +1,14 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
 use App\Models\Page;
 use App\Models\Sections;
 use Illuminate\Http\Request;
 use App\Repositories\PageRepositoryInterface;
+use App\Http\Controllers\Controller;
 
-class PageController extends Controller
+class HomePageController extends Controller
 {
     protected $pageRepository;
     public function __construct(PageRepositoryInterface $pageRepository)
@@ -17,9 +18,8 @@ class PageController extends Controller
     
     public function index()
     {
-        $data = $this->pageRepository->all();
-
-        return response()->json($data, 200);
+        $data['page'] = $this->pageRepository->all();
+        return view('test', $data);
     }
 
     public function getPage(string $slug)
@@ -32,6 +32,7 @@ class PageController extends Controller
     public function getHome()
     {
         $data['page'] = $this->pageRepository->find('home');
+
         return view('test', $data);
     }
 

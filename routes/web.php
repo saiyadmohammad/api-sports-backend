@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\PageController;
+use App\Http\Controllers\Admin\HomePageController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,6 +16,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/test', [PageController::class, 'index']);
+Route::get('/admin', [HomePageController::class, 'index']);
+
+
 
 Route::get('/', [PageController::class, 'getHome']);
 Route::get('/{slug}', [PageController::class, 'getPage']);
