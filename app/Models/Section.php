@@ -12,12 +12,15 @@ class Section extends Model
     protected $fillable = [
         'title',
         'page_id',
+        'type',
+        'order',
         'is_active',
         'section_data',
     ];
 
     protected $casts = [
         'section_data' => 'array',
+        'is_active' => 'boolean',
     ];
 
     public function page()

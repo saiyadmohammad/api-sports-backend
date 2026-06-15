@@ -16,6 +16,8 @@ return new class extends Migration
 
             $table->string('title')->nullable();
             $table->foreignId('page_id')->constrained()->onDelete('cascade');
+            $table->string('type')->nullable();
+            $table->integer('order')->default(0);
             $table->boolean('is_active')->default(true);
             $table->json('section_data')->nullable();
 
