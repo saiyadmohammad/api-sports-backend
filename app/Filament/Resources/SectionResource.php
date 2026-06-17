@@ -1,0 +1,265 @@
+<?php
+
+namespace App\Filament\Resources;
+
+use App\Filament\Resources\SectionResource\Pages;
+use App\Models\Section;
+use Filament\Forms;
+use Filament\Forms\Form;
+use Filament\Forms\Get;
+use Filament\Resources\Resource;
+use Filament\Tables;
+use Filament\Tables\Table;
+
+use Filament\Forms\Components\KeyValue;
+use Filament\Forms\Components\TextInput;
+use Filament\Forms\Components\Textarea;
+use Filament\Forms\Components\Repeater;
+use Filament\Forms\Components\Toggle;
+use Filament\Forms\Components\FileUpload;
+use Filament\Tables\Columns\TextColumn;
+
+class SectionResource extends Resource
+{
+    protected static ?string $model = Section::class;
+
+    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+
+    public static function form(Form $form): Form
+    {
+        $record = $form->getRecord();
+
+        return $form->schema([
+            ...static::getSectionFields($record?->type),
+        ]);
+    }
+
+    protected static function getSectionFields(?string $type): array
+    {
+        return match ($type) {
+                
+            'hero_home' => [
+                TextInput::make('section_data.heading'),
+                TextInput::make('section_data.title_first'),
+                TextInput::make('section_data.title_second'),
+                Textarea::make('section_data.subtitle'),
+                FileUpload::make('section_data.image'),
+            ],
+
+            'feature' => [
+                TextInput::make('section_data.heading'),
+                TextInput::make('section_data.title'),
+                Textarea::make('section_data.subtitle'),
+
+                Repeater::make('section_data.features')
+                    ->schema([
+                        TextInput::make('icon'),
+                        TextInput::make('title'),
+                        TextInput::make('description'),
+                    ]),
+            ],
+
+            'widget' => [
+                TextInput::make('section_data.heading'),
+                TextInput::make('section_data.title'),
+                Repeater::make('section_data.features')->simple(TextInput::make('feature')),
+            ],
+
+            'sports' => [
+                Repeater::make('section_data.sports')
+                    ->schema([
+                        TextInput::make('icon'),
+                        TextInput::make('name'),
+                        // TextInput::make('slug'),
+                    ]),
+            ],
+
+            'developer' => [
+                TextInput::make('section_data.heading'),
+                TextInput::make('section_data.title'),
+                Repeater::make('section_data.features')->simple(TextInput::make('feature')),
+
+                Repeater::make('section_data.codes')
+                    ->schema([
+                        TextInput::make('label'),
+                        TextInput::make('code'),
+                        // TextInput::make('active'),
+                    ]),
+            ],
+
+            'seamless_integrations' => [
+                TextInput::make('section_data.heading'),
+                TextInput::make('section_data.title'),
+                TextInput::make('section_data.subtitle'),
+
+                Repeater::make('section_data.tech_icons')
+                    ->schema([
+                        TextInput::make('name'),
+                        FileUpload::make('img'),
+                    ]),
+            ],
+
+            'why_choose' => [
+                TextInput::make('section_data.heading'),
+
+                Repeater::make('section_data.features')
+                    ->schema([
+                        TextInput::make('title'),
+                        TextInput::make('description'),
+                        FileUpload::make('img'),
+                    ]),
+            ],
+
+            'blogs' => [
+                TextInput::make('section_data.heading'),
+                TextInput::make('section_data.title'),
+                Textarea::make('section_data.subtitle'),
+
+                Repeater::make('section_data.blogs')
+                    ->schema([
+                        TextInput::make('title'),
+                        TextInput::make('subtitle'),
+                        TextInput::make('date'),
+                        TextInput::make('type'),
+                        TextInput::make('color'),
+                        FileUpload::make('img'),
+                    ]),
+            ],
+
+            'cta_section' => [
+                TextInput::make('section_data.heading'),
+
+                Repeater::make('section_data.features')
+                    ->schema([
+                        TextInput::make('title'),
+                        TextInput::make('heading'),
+                        TextInput::make('subtitle'),
+                        FileUpload::make('image'),
+                    ]),
+            ],
+        
+            // football page
+            'hero_football' => [
+                TextInput::make('section_data.heading'),
+                TextInput::make('section_data.title_first'),
+                TextInput::make('section_data.title_middle'),
+                Textarea::make('section_data.title_last'),
+                Textarea::make('section_data.subtitle'),
+                FileUpload::make('section_data.image'),
+
+                Repeater::make('section_data.key_metrics')
+                    ->schema([
+                        TextInput::make('icon'),
+                        TextInput::make('title'),
+                        TextInput::make('subtitle'),
+                        // FileUpload::make('image'),
+                    ]),
+            ],
+
+            'data_coverage_football' => [
+                TextInput::make('section_data.heading'),
+                TextInput::make('section_data.title'),
+                TextInput::make('section_data.subtitle'),
+
+                Repeater::make('section_data.all_features')
+                    ->schema([
+                        TextInput::make('name'),
+                        // TextInput::make('country'),
+                        FileUpload::make('img'),
+                        Toggle::make('features.live'),
+                        Toggle::make('features.teams'),
+                        Toggle::make('features.players'),
+                        Toggle::make('features.results'),
+                        Toggle::make('features.fixtures'),
+                        Toggle::make('features.standings'),
+                    ]),
+            ],
+
+            // Cricket page
+            'hero_cricket' => [
+                TextInput::make('section_data.heading'),
+                TextInput::make('section_data.title_first'),
+                TextInput::make('section_data.title_middle'),
+                Textarea::make('section_data.title_last'),
+                Textarea::make('section_data.subtitle'),
+                FileUpload::make('section_data.image'),
+
+                Repeater::make('section_data.key_metrics')
+                    ->schema([
+                        TextInput::make('icon'),
+                        TextInput::make('title'),
+                        TextInput::make('subtitle'),
+                        // FileUpload::make('image'),
+                    ]),
+            ],
+
+            'data_coverage_cricket' => [
+                TextInput::make('section_data.heading'),
+                TextInput::make('section_data.title'),
+                TextInput::make('section_data.subtitle'),
+
+                Repeater::make('section_data.all_features')
+                    ->schema([
+                        TextInput::make('name'),
+                        // TextInput::make('country'),
+                        FileUpload::make('img'),
+                        Toggle::make('features.live'),
+                        Toggle::make('features.teams'),
+                        Toggle::make('features.players'),
+                        Toggle::make('features.results'),
+                        Toggle::make('features.fixtures'),
+                        Toggle::make('features.standings'),
+                    ]),
+            ],
+
+            'pricing' => [
+                TextInput::make('section_data.heading'),
+                TextInput::make('section_data.title'),
+                Textarea::make('section_data.subtitle'),
+
+                Repeater::make('section_data.pricing_plans')
+                    ->schema([
+                        TextInput::make('name'),
+                        TextInput::make('description'),
+                        TextInput::make('price')->numeric(),
+                        TextInput::make('currency'),
+                        TextInput::make('billing'),
+                        TextInput::make('badge'),
+                        Toggle::make('popular'),
+                        Repeater::make('features')->simple(TextInput::make('feature')),
+                    ]),
+            ],
+
+            default => [
+                KeyValue::make('section_data'),
+            ],
+        };
+    }
+
+    public static function table(Table $table): Table
+    {
+        return $table
+            ->columns([
+                TextColumn::make('title'),
+
+                TextColumn::make('type'),
+            ])
+            ->actions([
+                Tables\Actions\EditAction::make(),
+            ]);
+    }
+
+    public static function getRelations(): array
+    {
+        return [];
+    }
+
+    public static function getPages(): array
+    {
+        return [
+            'index' => Pages\ListSections::route('/'),
+            'create' => Pages\CreateSection::route('/create'),
+            'edit' => Pages\EditSection::route('/{record}/edit'),
+        ];
+    }
+}

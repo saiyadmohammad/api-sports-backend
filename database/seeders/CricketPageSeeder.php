@@ -26,8 +26,8 @@ class CricketPageSeeder extends Seeder
         
         $sections = [
             [
-                "title" => "Hero",
-                "type" => "hero",
+                "title" => "Cricket Hero",
+                "type" => "hero_cricket",
                 "order" => 1,
                 "is_active" => true,
 				"section_data" => [
@@ -78,102 +78,8 @@ class CricketPageSeeder extends Seeder
 				],
             ],
             [
-                "title" => "Competitions",
-                "type" => "competitions",
-                "order" => 2,
-                "is_active" => true,
-				"section_data" => [
-                    "all_features" => [
-                        [
-                            "id" => 1,
-                            "name" => "World Cup",
-                            "country" => "International",
-                            "img" => "/assets/leagues/champions-league.png",
-                            "features" => [
-                                "live" => true,
-                                "fixtures" => true,
-                                "results" => true,
-                                "standings" => true,
-                                "players" => true,
-                                "teams" => true,
-                            ],
-                        ],
-                        [
-                            "id" => 2,
-                            "name" => "IPL",
-                            "country" => "India",
-                            "img" => "/assets/leagues/mls.png",
-                            "features" => [
-                                "live" => true,
-                                "fixtures" => true,
-                                "results" => true,
-                                "standings" => true,
-                                "players" => true,
-                                "teams" => true,
-                            ],
-                        ],
-                        [
-                            "id" => 3,
-                            "name" => "Big Bash",
-                            "country" => "Australia",
-                            "img" => "/assets/leagues/europa-league.png",
-                            "features" => [
-                                "live" => true,
-                                "fixtures" => true,
-                                "results" => true,
-                                "standings" => true,
-                                "players" => true,
-                                "teams" => true,
-                            ],
-                        ],
-                        [
-                            "id" => 4,
-                            "name" => "PSL",
-                            "country" => "Pakistan",
-                            "img" => "/assets/leagues/laliga.png",
-                            "features" => [
-                                "live" => true,
-                                "fixtures" => true,
-                                "results" => true,
-                                "standings" => true,
-                                "players" => true,
-                                "teams" => true,
-                            ],
-                        ],
-                        [
-                            "id" => 5,
-                            "name" => "The Hundred",
-                            "country" => "England",
-                            "img" => "/assets/leagues/fa-cup.png",
-                            "features" => [
-                                "live" => true,
-                                "fixtures" => true,
-                                "results" => true,
-                                "standings" => true,
-                                "players" => true,
-                                "teams" => true,
-                            ],
-                        ],
-                        [
-                            "id" => 6,
-                            "name" => "Asia Cup",
-                            "country" => "Asia",
-                            "img" => "/assets/leagues/serie-a.png",
-                            "features" => [
-                                "live" => true,
-                                "fixtures" => true,
-                                "results" => true,
-                                "standings" => true,
-                                "players" => true,
-                                "teams" => true,
-                            ],
-                        ],
-                    ],
-                ],
-            ],
-            [
-                "title" => "Data Coverage",
-                "type" => "data_coverage",
+                "title" => "Data Coverage Cricket",
+                "type" => "data_coverage_cricket",
                 "order" => 3,
                 "is_active" => true,
 				"section_data" => [

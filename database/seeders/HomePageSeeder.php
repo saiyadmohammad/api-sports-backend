@@ -26,8 +26,8 @@ class HomePageSeeder extends Seeder
 
         $sections = [	
 			[
-				"title" => "hero",
-                "type" => "hero",
+				"title" => "Homepage Hero",
+                "type" => "hero_home",
                 "order" => 1,
                 "is_active" => true,
 				"section_data" => [
@@ -304,7 +304,7 @@ class HomePageSeeder extends Seeder
             ],
             [
                 "title"=> "Blogs",
-                "type" => "blog",
+                "type" => "blogs",
                 "order" => 7,
                 "is_active" => true,
                 "section_data" => [

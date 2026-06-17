@@ -26,8 +26,8 @@ class FootballPageSeeder extends Seeder
         
         $sections = [
             [
-                "title" => "Hero",
-                "type" => "hero",
+                "title" => "Football Hero",
+                "type" => "hero_football",
                 "order" => 1,
                 "is_active" => true,
 				"section_data" => [
@@ -78,102 +78,8 @@ class FootballPageSeeder extends Seeder
 				],
             ],
             [
-                "title" => "Competitions",
-                "type" => "competitions",
-                "order" => 2,
-                "is_active" => true,
-				"section_data" => [
-                    "all_features" => [
-                        [
-                            "id" => 1,
-                            "name" => "Champions League",
-                            "country" => "Europe",
-                            "img" => "/assets/leagues/champions-league.png",
-                            "features" => [
-                                "live" => true,
-                                "fixtures" => true,
-                                "results" => true,
-                                "standings" => true,
-                                "players" => true,
-                                "teams" => true,
-                            ],
-                        ],
-                        [
-                            "id" => 2,
-                            "name" => "Europa League",
-                            "country" => "Europe",
-                            "img" => "/assets/leagues/europa-league.png",
-                            "features" => [
-                                "live" => true,
-                                "fixtures" => true,
-                                "results" => true,
-                                "standings" => true,
-                                "players" => true,
-                                "teams" => true,
-                            ],
-                        ],
-                        [
-                            "id" => 3,
-                            "name" => "FA Cup",
-                            "country" => "England",
-                            "img" => "/assets/leagues/fa-cup.png",
-                            "features" => [
-                                "live" => true,
-                                "fixtures" => true,
-                                "results" => true,
-                                "standings" => true,
-                                "players" => true,
-                                "teams" => true,
-                            ],
-                        ],
-                        [
-                            "id" => 4,
-                            "name" => "La Liga",
-                            "country" => "Spain",
-                            "img" => "/assets/leagues/laliga.png",
-                            "features" => [
-                                "live" => true,
-                                "fixtures" => true,
-                                "results" => true,
-                                "standings" => true,
-                                "players" => true,
-                                "teams" => true,
-                            ],
-                        ],
-                        [
-                            "id" => 5,
-                            "name" => "MLS",
-                            "country" => "USA",
-                            "img" => "/assets/leagues/mls.png",
-                            "features" => [
-                                "live" => true,
-                                "fixtures" => true,
-                                "results" => true,
-                                "standings" => true,
-                                "players" => true,
-                                "teams" => true,
-                            ],
-                        ],
-                        [
-                            "id" => 6,
-                            "name" => "Premier League",
-                            "country" => "England",
-                            "img" => "/assets/leagues/premier-league.png",
-                            "features" => [
-                                "live" => true,
-                                "fixtures" => true,
-                                "results" => true,
-                                "standings" => true,
-                                "players" => true,
-                                "teams" => true,
-                            ],
-                        ],
-                    ],
-                ],
-            ],
-            [
-                "title" => "Data Coverage",
-                "type" => "data_coverage",
+                "title" => "Data Coverage Football",
+                "type" => "data_coverage_football",
                 "order" => 3,
                 "is_active" => true,
 				"section_data" => [
