@@ -1,15 +1,14 @@
 <?php
 
-namespace App\Filament\Resources;
+namespace App\Filament\Resources\PageResource\RelationManagers;
 
-use App\Filament\Resources\SectionResource\Pages;
-use App\Models\Section;
 use Filament\Forms;
 use Filament\Forms\Form;
-use Filament\Forms\Get;
-use Filament\Resources\Resource;
+use Filament\Resources\RelationManagers\RelationManager;
 use Filament\Tables;
 use Filament\Tables\Table;
+use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\SoftDeletingScope;
 
 use Filament\Forms\Components\KeyValue;
 use Filament\Forms\Components\TextInput;
@@ -19,13 +18,11 @@ use Filament\Forms\Components\Toggle;
 use Filament\Forms\Components\FileUpload;
 use Filament\Tables\Columns\TextColumn;
 
-class SectionResource extends Resource
+class SectionRelationManager extends RelationManager
 {
-    protected static ?string $model = Section::class;
+    protected static string $relationship = 'section';
 
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
-
-    public static function form(Form $form): Form
+    public function form(Form $form): Form
     {
         $record = $form->getRecord();
 
@@ -259,29 +256,28 @@ class SectionResource extends Resource
         };
     }
 
-    public static function table(Table $table): Table
+    public function table(Table $table): Table
     {
         return $table
+            ->recordTitleAttribute('title')
             ->columns([
                 TextColumn::make('title'),
                 TextColumn::make('type'),
             ])
+            ->filters([
+                //
+            ])
+            ->headerActions([
+                Tables\Actions\CreateAction::make(),
+            ])
             ->actions([
                 Tables\Actions\EditAction::make(),
+                Tables\Actions\DeleteAction::make(),
+            ])
+            ->bulkActions([
+                Tables\Actions\BulkActionGroup::make([
+                    Tables\Actions\DeleteBulkAction::make(),
+                ]),
             ]);
-    }
-
-    public static function getRelations(): array
-    {
-        return [];
-    }
-
-    public static function getPages(): array
-    {
-        return [
-            'index' => Pages\ListSections::route('/'),
-            'create' => Pages\CreateSection::route('/create'),
-            'edit' => Pages\EditSection::route('/{record}/edit'),
-        ];
     }
 }

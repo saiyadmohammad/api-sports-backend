@@ -177,7 +177,7 @@ class HomePageSeeder extends Seeder
             ],
 			[
 				"title" => "Developer section",
-				"type" => "developer",
+				"type" => "developer_home",
 				"order" => 4,
 				"is_active" => true,
 				"section_data" => [
@@ -310,6 +310,7 @@ class HomePageSeeder extends Seeder
                 "section_data" => [
                     "heading" => "FROM OUR BLOG",
                     "title"=> "Latest articles & resources",
+                    "subtitle" => "Tips, updates and guides to help you build better with our API.",
                     "blogs" => [
                         [
                             "id" => "1",

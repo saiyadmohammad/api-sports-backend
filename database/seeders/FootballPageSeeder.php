@@ -86,6 +86,12 @@ class FootballPageSeeder extends Seeder
                     "heading" => "DATA COVERAGE",
                     "title" => "Extensive coverage you can rely on",
                     "subtitle" => "We cover 150+ leagues, cups and competitions from around the world with accurate and up-to-date data.",
+                    "features" => [
+						"RESTful API with JSON responses",
+						"Real-time & historical data",
+						"Easy authentication",
+						"Comprehensive documentation",
+					],
                     "all_features" => [
                         [
                             "id" => 1,
@@ -176,13 +182,19 @@ class FootballPageSeeder extends Seeder
             ],
             [
 				"title" => "Developer section",
-				"type" => "developer",
+				"type" => "developer_football",
 				"order" => 4,
 				"is_active" => true,
 				"section_data" => [
 					"heading" => "API ENDPOINTS",
 					"title" => "Clean, simple and developer friendly",
                     "subtitle" => "Well structured RESTful API endpoints that return real-time JSON data.",
+                    "features" => [
+						"RESTful API with JSON responses",
+						"Real-time & historical data",
+						"Easy authentication",
+						"Comprehensive documentation",
+					],
 					"codes" => [
 						[
 							"id" => "javascript",

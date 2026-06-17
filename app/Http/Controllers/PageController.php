@@ -22,6 +22,13 @@ class PageController extends Controller
         return response()->json($data, 200);
     }
 
+    // public function index()
+    // {
+    //    return env('APP_URL') . Storage::url("01KVAKPE9YBTA0J30VZMQ1WS9N.png");
+
+    //     return response()->json($data, 200);
+    // }
+
     public function getPage(string $slug)
     {
         // dd($slug);

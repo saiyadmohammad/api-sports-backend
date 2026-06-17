@@ -176,13 +176,19 @@ class CricketPageSeeder extends Seeder
             ],
             [
 				"title" => "Developer section",
-				"type" => "developer",
+				"type" => "developer_cricket",
 				"order" => 4,
 				"is_active" => true,
 				"section_data" => [
 					"heading" => "API ENDPOINTS",
 					"title" => "Clean, simple and developer friendly",
                     "subtitle" => "Well structured RESTful API endpoints that return real-time JSON data.",
+                    "features" => [
+						"RESTful API with JSON responses",
+						"Real-time & historical data",
+						"Easy authentication",
+						"Comprehensive documentation",
+					],
 					"codes" => [
 						[
 							"id" => "javascript",
