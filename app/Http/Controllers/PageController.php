@@ -6,6 +6,7 @@ use App\Models\Page;
 use App\Models\Sections;
 use Illuminate\Http\Request;
 use App\Repositories\PageRepositoryInterface;
+use Illuminate\Support\Facades\Storage;
 
 class PageController extends Controller
 {
@@ -14,18 +15,34 @@ class PageController extends Controller
     {
         $this->pageRepository = $pageRepository;
     }
-    
+
+    protected function getImageUrl(array $data):array
+    {
+        foreach ($data as $key => $value) {
+            // dd($data);
+            if (is_array($value)) {
+                $data[$key] = $this->getImageUrl($value);
+            } else {
+                if (is_string($value) && preg_match('/\.(jpg|jpeg|png|svg|gif|webp)$/i', $value)) {
+                    $data[$key] = asset(Storage::url($value));
+                }
+            }
+        }
+        return $data;
+    }
+
     public function index()
     {
-        $data = $this->pageRepository->all();
+        $data = $this->pageRepository->all()->toArray();
+        
+        $data = $this->getImageUrl($data);
 
         return response()->json($data, 200);
     }
 
     // public function index()
     // {
-    //    return env('APP_URL') . Storage::url("01KVAKPE9YBTA0J30VZMQ1WS9N.png");
-
+    //     return env('APP_URL') . Storage::url("01KVAKPE9YBTA0J30VZMQ1WS9N.png");
     //     return response()->json($data, 200);
     // }
 

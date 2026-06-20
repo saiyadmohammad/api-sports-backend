@@ -127,7 +127,7 @@ class SectionRelationManager extends RelationManager
                 TextInput::make('section_data.heading'),
                 TextInput::make('section_data.title'),
                 TextInput::make('section_data.subtitle'),
-                FileUpload::make('image'),
+                FileUpload::make('section_data.image'),
             ],
         
             // football page

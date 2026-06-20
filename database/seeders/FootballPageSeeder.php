@@ -37,7 +37,7 @@ class FootballPageSeeder extends Seeder
                     "title_middle" => "football",
 					"title_last" => "data",
 					"subtitle" => "Get live scores, fixtures, standings, players, teams and much more. Trusted by developers worldwide.",
-                    "image" => "/assets/img/football.png",
+                    "image" => "assets/img/football.png",
                     "key_metrics" => [
                         [
                             "id" => 1,
@@ -97,7 +97,7 @@ class FootballPageSeeder extends Seeder
                             "id" => 1,
                             "name" => "Champions League",
                             "country" => "Europe",
-                            "img" => "/assets/leagues/champions-league.png",
+                            "img" => "assets/leagues/champions-league.png",
                             "features" => [
                                 "live" => true,
                                 "fixtures" => true,
@@ -111,7 +111,7 @@ class FootballPageSeeder extends Seeder
                             "id" => 2,
                             "name" => "Europa League",
                             "country" => "Europe",
-                            "img" => "/assets/leagues/europa-league.png",
+                            "img" => "assets/leagues/europa-league.png",
                             "features" => [
                                 "live" => true,
                                 "fixtures" => true,
@@ -125,7 +125,7 @@ class FootballPageSeeder extends Seeder
                             "id" => 3,
                             "name" => "FA Cup",
                             "country" => "England",
-                            "img" => "/assets/leagues/fa-cup.png",
+                            "img" => "assets/leagues/fa-cup.png",
                             "features" => [
                                 "live" => true,
                                 "fixtures" => true,
@@ -139,7 +139,7 @@ class FootballPageSeeder extends Seeder
                             "id" => 4,
                             "name" => "La Liga",
                             "country" => "Spain",
-                            "img" => "/assets/leagues/laliga.png",
+                            "img" => "assets/leagues/laliga.png",
                             "features" => [
                                 "live" => true,
                                 "fixtures" => true,
@@ -153,7 +153,7 @@ class FootballPageSeeder extends Seeder
                             "id" => 5,
                             "name" => "MLS",
                             "country" => "USA",
-                            "img" => "/assets/leagues/mls.png",
+                            "img" => "assets/leagues/mls.png",
                             "features" => [
                                 "live" => true,
                                 "fixtures" => true,
@@ -167,7 +167,7 @@ class FootballPageSeeder extends Seeder
                             "id" => 6,
                             "name" => "Premier League",
                             "country" => "England",
-                            "img" => "/assets/leagues/premier-league.png",
+                            "img" => "assets/leagues/premier-league.png",
                             "features" => [
                                 "live" => true,
                                 "fixtures" => true,
@@ -300,7 +300,7 @@ class FootballPageSeeder extends Seeder
                             "color" => "green",
                             "title" => "Introductin New basketball API Endpoints",
                             "subtitle" => "Introductin New basketball API Endpoints",
-                            "img" => "/assets/blog-img/blog-img-1.png",
+                            "img" => "assets/blog-img/blog-img-1.png",
                             "date" => "May 10, 2024"
                         ],
                         [
@@ -309,7 +309,7 @@ class FootballPageSeeder extends Seeder
                             "color" => "green",
                             "title" => "Introductin New basketball API Endpoints",
                             "subtitle" => "Introductin New basketball API Endpoints",
-                            "img" => "/assets/blog-img/blog-img-1.png",
+                            "img" => "assets/blog-img/blog-img-1.png",
                             "date" => "May 10, 2024"
                         ],
                         [
@@ -318,7 +318,7 @@ class FootballPageSeeder extends Seeder
                             "color" => "green",
                             "title" => "Introductin New basketball API Endpoints",
                             "subtitle" => "Introductin New basketball API Endpoints",
-                            "img" => "/assets/blog-img/blog-img-1.png",
+                            "img" => "assets/blog-img/blog-img-1.png",
                             "date" => "May 10, 2024"
                         ]
                     ]

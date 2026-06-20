@@ -37,7 +37,7 @@ class CricketPageSeeder extends Seeder
                     "title_middle" => "cricket",
 					"title_last" => "data",
 					"subtitle" => "Get live scores, fixtures, player stats, team rankings, ball-by-ball commentary and much more. Built for modern cricket applications.",
-                    "image" => "/assets/img/cricket2.png",
+                    "image" => "assets/img/cricket2.png",
                     "key_metrics" => [
                         [
                             "id" => 1,
@@ -91,7 +91,7 @@ class CricketPageSeeder extends Seeder
                             "id" => 1,
                             "name" => "World Cup",
                             "country" => "International",
-                            "img" => "/assets/leagues/champions-league.png",
+                            "img" => "assets/leagues/champions-league.png",
                             "features" => [
                                 "live" => true,
                                 "fixtures" => true,
@@ -105,7 +105,7 @@ class CricketPageSeeder extends Seeder
                             "id" => 2,
                             "name" => "IPL",
                             "country" => "India",
-                            "img" => "/assets/leagues/mls.png",
+                            "img" => "assets/leagues/mls.png",
                             "features" => [
                                 "live" => true,
                                 "fixtures" => true,
@@ -119,7 +119,7 @@ class CricketPageSeeder extends Seeder
                             "id" => 3,
                             "name" => "Big Bash",
                             "country" => "Australia",
-                            "img" => "/assets/leagues/europa-league.png",
+                            "img" => "assets/leagues/europa-league.png",
                             "features" => [
                                 "live" => true,
                                 "fixtures" => true,
@@ -133,7 +133,7 @@ class CricketPageSeeder extends Seeder
                             "id" => 4,
                             "name" => "PSL",
                             "country" => "Pakistan",
-                            "img" => "/assets/leagues/laliga.png",
+                            "img" => "assets/leagues/laliga.png",
                             "features" => [
                                 "live" => true,
                                 "fixtures" => true,
@@ -147,7 +147,7 @@ class CricketPageSeeder extends Seeder
                             "id" => 5,
                             "name" => "The Hundred",
                             "country" => "England",
-                            "img" => "/assets/leagues/fa-cup.png",
+                            "img" => "assets/leagues/fa-cup.png",
                             "features" => [
                                 "live" => true,
                                 "fixtures" => true,
@@ -161,7 +161,7 @@ class CricketPageSeeder extends Seeder
                             "id" => 6,
                             "name" => "Asia Cup",
                             "country" => "Asia",
-                            "img" => "/assets/leagues/serie-a.png",
+                            "img" => "assets/leagues/serie-a.png",
                             "features" => [
                                 "live" => true,
                                 "fixtures" => true,
@@ -294,7 +294,7 @@ class CricketPageSeeder extends Seeder
                             "color" => "green",
                             "title" => "Introducing New Cricket API Endpoints",
                             "subtitle" => "Explore our latest cricket API endpoints for live scores, commentary, and player statistics.",
-                            "img" => "/assets/blog-img/blog-img-1.png",
+                            "img" => "assets/blog-img/blog-img-1.png",
                             "date" => "May 10, 2024"
                         ],
                         [
@@ -303,7 +303,7 @@ class CricketPageSeeder extends Seeder
                             "color" => "blue",
                             "title" => "How To Build A Live Cricket Score App",
                             "subtitle" => "Learn how to integrate real-time cricket scores into your web or mobile application.",
-                            "img" => "/assets/blog-img/blog-img-1.png",
+                            "img" => "assets/blog-img/blog-img-1.png",
                             "date" => "May 10, 2024"
                         ],
                         [
@@ -312,7 +312,7 @@ class CricketPageSeeder extends Seeder
                             "color" => "purple",
                             "title" => "Ball-by-Ball Commentary API Released",
                             "subtitle" => "Get detailed over-by-over and ball-by-ball cricket commentary with our new API release.",
-                            "img" => "/assets/blog-img/blog-img-1.png",
+                            "img" => "assets/blog-img/blog-img-1.png",
                             "date" => "May 10, 2024"
                         ]
                     ]

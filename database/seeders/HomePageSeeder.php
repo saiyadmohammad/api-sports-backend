@@ -36,7 +36,7 @@ class HomePageSeeder extends Seeder
 					"title_first" => "Real-time",
 					"title_second" => "sports data",
 					"subtitle" => "Power your app with live scores, standings, stats, and more. Built by developers, for developers.",
-					"image" => "/assets/sports-api-hero.png",
+					"image" => "assets/sports-api-hero.png",
 				],
 			],
 			[
@@ -231,22 +231,22 @@ class HomePageSeeder extends Seeder
                         [
                             "id" => "1",
                             "name" => "Next.js",
-                            "img" => "/assets/techstack/nextjs.svg",
+                            "img" => "assets/techstack/nextjs.svg",
                         ],
                         [
                             "id" => "2",
                             "name" => "Tailwind CSS",
-                            "img"=> "/assets/techstack/tailwind.svg",
+                            "img"=> "assets/techstack/tailwind.svg",
                         ],
                         [
                             "id" => "3",
                             "name" => "Sass",
-                            "img"=> "/assets/techstack/scss.svg", 
+                            "img"=> "assets/techstack/scss.svg", 
                         ],
                         [
                             "id" => "4",
                             "name" => "React",
-                            "img"=> "/assets/techstack/react.svg", 
+                            "img"=> "assets/techstack/react.svg", 
                         ],
                         [
                             "id" => "5",
@@ -256,17 +256,17 @@ class HomePageSeeder extends Seeder
                         [
                             "id" => "6",
                             "name" => "Laravel",
-                            "img"=> "/assets/techstack/laravel.svg",
+                            "img"=> "assets/techstack/laravel.svg",
                         ],
                         [
                             "id" => "7",
                             "name" => "MySQL",
-                            "img"=> "/assets/techstack/mysql.svg",
+                            "img"=> "assets/techstack/mysql.svg",
                         ],
                         [
                             "id" => "8",
                             "name" => "Redis",
-                            "img"=> "/assets/techstack/redis.svg",
+                            "img"=> "assets/techstack/redis.svg",
                         ],
                     ]
 				],
@@ -285,19 +285,19 @@ class HomePageSeeder extends Seeder
                             "id"=> "1",
                             "title" => "Easy to start",
                             "description" => "Get your API key and start making requests in minutes.",
-                            "img" => "/assets/img/shuttle.png"
+                            "img" => "assets/img/shuttle.png"
                         ],
                         [
                             "id"=> "2",
                             "title" => "Reliable & Scalable",
                             "description" => "Built on robust infrastructure with 99.9% uptime.",
-                            "img" => "/assets/img/scalability.png"
+                            "img" => "assets/img/scalability.png"
                         ],
                         [
                             "id"=> "3",
                             "title" => "Developer Support",
                             "description" => "Fast, friendly support when you need it.",
-                            "img" => "/assets/img/customer-support.png"
+                            "img" => "assets/img/customer-support.png"
                         ],
                     ]
                 ]
@@ -318,7 +318,7 @@ class HomePageSeeder extends Seeder
                             "color" => "green",
                             "title" => "Introductin New basketball API Endpoints",
                             "subtitle" => "Introductin New basketball API Endpoints",
-                            "img" => "/assets/blog-img/blog-1.png",
+                            "img" => "assets/blog-img/blog-1.png",
                             "date" => "May 10, 2024"
                         ],
                         [
@@ -327,7 +327,7 @@ class HomePageSeeder extends Seeder
                             "color" => "green",
                             "title" => "Introductin New basketball API Endpoints",
                             "subtitle" => "Introductin New basketball API Endpoints",
-                            "img" => "/assets/blog-img/blog-1.png",
+                            "img" => "assets/blog-img/blog-1.png",
                             "date" => "May 10, 2024"
                         ],
                         [
@@ -336,7 +336,7 @@ class HomePageSeeder extends Seeder
                             "color" => "green",
                             "title" => "Introductin New basketball API Endpoints",
                             "subtitle" => "Introductin New basketball API Endpoints",
-                            "img" => "/assets/blog-img/blog-1.png",
+                            "img" => "assets/blog-img/blog-1.png",
                             "date" => "May 10, 2024"
                         ]
                     ]
@@ -351,7 +351,7 @@ class HomePageSeeder extends Seeder
                     "heading" => "READY TO BUILD?",
                     "title"=> "Start building for free",
                     "subtitle" => "Join thousands of developers building amazing sports apps.",
-                    "image" => "/assets/blog-img/blog-1.png",
+                    "image" => "assets/blog-img/blog-1.png",
                 ]
             ],
 		];

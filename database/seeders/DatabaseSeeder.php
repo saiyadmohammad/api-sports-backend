@@ -18,6 +18,7 @@ class DatabaseSeeder extends Seeder
             HomePageSeeder::class,
             FootballPageSeeder::class,
             CricketPageSeeder::class,
+            PageSettingSeeder::class,
         ]);
 
        

@@ -15,6 +15,7 @@ use Illuminate\Database\Eloquent\SoftDeletingScope;
 use Filament\Tables\Columns\IconColumn;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Forms\Components\TextInput;
+use Filament\Forms\Components\FileUpload;
 
 class PageResource extends Resource
 {
@@ -24,11 +25,14 @@ class PageResource extends Resource
 
     public static function form(Form $form): Form
     {
+
+        dd($form);
         return $form
             ->schema([
                 TextInput::make('title'),
                 TextInput::make('slug'),
                 TextInput::make('description'),
+                FileUpload::make('logo'),
             ]);
     }
 
