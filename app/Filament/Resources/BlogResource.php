@@ -2,9 +2,9 @@
 
 namespace App\Filament\Resources;
 
-use App\Filament\Resources\PageResource\Pages;
-use App\Filament\Resources\PageResource\RelationManagers;
-use App\Models\Page;
+use App\Filament\Resources\BlogResource\Pages;
+use App\Filament\Resources\BlogResource\RelationManagers;
+use App\Models\Blog;
 use Filament\Forms;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
@@ -12,14 +12,15 @@ use Filament\Tables;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
-use Filament\Tables\Columns\IconColumn;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\FileUpload;
+use Filament\Forms\Components\RichEditor;
 
-class PageResource extends Resource
+
+class BlogResource extends Resource
 {
-    protected static ?string $model = Page::class;
+    protected static ?string $model = Blog::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
 
@@ -28,8 +29,12 @@ class PageResource extends Resource
         return $form
             ->schema([
                 TextInput::make('title'),
-                TextInput::make('slug'),
-                TextInput::make('description'),
+                TextInput::make('type'),
+                RichEditor::make('blog_data'),
+                // TextInput::make('blog_data'),
+                TextInput::make('author'),
+                // TextInput::make('description'),
+                FileUpload::make('image'),
             ]);
     }
 
@@ -38,13 +43,13 @@ class PageResource extends Resource
         return $table
             ->columns([
                 TextColumn::make('title'),
-                TextColumn::make('slug'),
+                TextColumn::make('type'),
+                TextColumn::make('author'),
             ])
             ->filters([
                 //
             ])
             ->actions([
-                Tables\Actions\ViewAction::make(),
                 Tables\Actions\EditAction::make(),
             ])
             ->bulkActions([
@@ -57,17 +62,16 @@ class PageResource extends Resource
     public static function getRelations(): array
     {
         return [
-            RelationManagers\SectionRelationManager::class,
+            //
         ];
     }
 
     public static function getPages(): array
     {
         return [
-            'index' => Pages\ListPages::route('/'),
-            'create' => Pages\CreatePage::route('/create'),
-            'view' => Pages\ViewPage::route('/{record}'),
-            'edit' => Pages\EditPage::route('/{record}/edit'),
+            'index' => Pages\ListBlogs::route('/'),
+            'create' => Pages\CreateBlog::route('/create'),
+            'edit' => Pages\EditBlog::route('/{record}/edit'),
         ];
     }
 }

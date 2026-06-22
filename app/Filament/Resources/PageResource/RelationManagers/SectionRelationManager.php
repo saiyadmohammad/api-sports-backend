@@ -34,7 +34,10 @@ class SectionRelationManager extends RelationManager
     protected static function getSectionFields(?string $type): array
     {
         return match ($type) {
-                
+            'setting' => [
+                FileUpload::make('section_data.nav_logo'),
+            ],
+
             'hero_home' => [
                 TextInput::make('section_data.heading'),
                 TextInput::make('section_data.title_first'),

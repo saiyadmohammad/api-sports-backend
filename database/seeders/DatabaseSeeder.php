@@ -19,6 +19,8 @@ class DatabaseSeeder extends Seeder
             FootballPageSeeder::class,
             CricketPageSeeder::class,
             PageSettingSeeder::class,
+            BlogSeeder::class,
+            PricingSeeder::class,
         ]);
 
        

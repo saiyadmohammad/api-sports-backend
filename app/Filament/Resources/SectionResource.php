@@ -37,7 +37,10 @@ class SectionResource extends Resource
     protected static function getSectionFields(?string $type): array
     {
         return match ($type) {
-                
+            'setting' => [
+                FileUpload::make('section_data.nav_logo'),
+            ],
+
             'hero_home' => [
                 TextInput::make('section_data.heading'),
                 TextInput::make('section_data.title_first'),
@@ -130,7 +133,7 @@ class SectionResource extends Resource
                 TextInput::make('section_data.heading'),
                 TextInput::make('section_data.title'),
                 TextInput::make('section_data.subtitle'),
-                FileUpload::make('image'),
+                FileUpload::make('section_data.image'),
             ],
         
             // football page

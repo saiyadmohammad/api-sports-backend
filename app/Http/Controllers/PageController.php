@@ -48,9 +48,9 @@ class PageController extends Controller
 
     public function getPage(string $slug)
     {
-        // dd($slug);
-        $data['page'] = $this->pageRepository->find($slug);
-        return view('test', $data);
+        $data = $this->pageRepository->find($slug);
+        return response()->json($data, 200);
+        // return view('test', $data);
     }
 
     public function getHome()

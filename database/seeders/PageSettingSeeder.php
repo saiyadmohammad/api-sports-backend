@@ -16,10 +16,35 @@ class PageSettingSeeder extends Seeder
     public function run(): void
     {
         // Page::factory()->has(Section::factory()->count(3), 'section')->create();
-        $setting = Page::create([
+        // Page::create([
+        //     'title' => 'Setting',
+        //     'slug' => 'setting',
+        //     'logo' => '/assets/logo-light.png',
+        // ]);
+
+        $settingPage = Page::create([
             'title' => 'Setting',
             'slug' => 'setting',
-            'logo' => '/assets/logo-light.png',
+            'description' => fake()->paragraph(),
+            'meta_title' => fake()->sentence(),
+            'meta_description' => fake()->paragraph(),
         ]);
+
+
+        $sections = [	
+			[
+				"title" => "Navbar",
+                "type" => "setting",
+                "order" => 1,
+                "is_active" => true,
+				"section_data" => [
+					'nav_logo' => '/assets/logo-light.png',
+				],
+			],
+        ];
+        
+        foreach($sections as $section) {
+            $settingPage->section()->create($section);
+        }
     }
 }

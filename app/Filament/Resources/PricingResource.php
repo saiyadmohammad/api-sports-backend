@@ -2,9 +2,9 @@
 
 namespace App\Filament\Resources;
 
-use App\Filament\Resources\PageResource\Pages;
-use App\Filament\Resources\PageResource\RelationManagers;
-use App\Models\Page;
+use App\Filament\Resources\PricingResource\Pages;
+use App\Filament\Resources\PricingResource\RelationManagers;
+use App\Models\Pricing;
 use Filament\Forms;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
@@ -15,11 +15,13 @@ use Illuminate\Database\Eloquent\SoftDeletingScope;
 use Filament\Tables\Columns\IconColumn;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Forms\Components\TextInput;
+use Filament\Forms\Components\Repeater;
+use Filament\Forms\Components\Toggle;
 use Filament\Forms\Components\FileUpload;
 
-class PageResource extends Resource
+class PricingResource extends Resource
 {
-    protected static ?string $model = Page::class;
+    protected static ?string $model = Pricing::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
 
@@ -27,9 +29,15 @@ class PageResource extends Resource
     {
         return $form
             ->schema([
-                TextInput::make('title'),
-                TextInput::make('slug'),
-                TextInput::make('description'),
+                TextInput::make('name'),
+                TextInput::make('tag'),
+                TextInput::make('price'),
+                TextInput::make('button_text'),
+                TextInput::make('currency'),
+                TextInput::make('order'),
+                Toggle::make('is_popular'),
+                Toggle::make('is_active'),
+                Repeater::make('features')->simple(TextInput::make('feature')),
             ]);
     }
 
@@ -37,14 +45,14 @@ class PageResource extends Resource
     {
         return $table
             ->columns([
-                TextColumn::make('title'),
-                TextColumn::make('slug'),
+                TextColumn::make('name'),
+                TextColumn::make('tag'),
+                TextColumn::make('price'),
             ])
             ->filters([
                 //
             ])
             ->actions([
-                Tables\Actions\ViewAction::make(),
                 Tables\Actions\EditAction::make(),
             ])
             ->bulkActions([
@@ -57,17 +65,16 @@ class PageResource extends Resource
     public static function getRelations(): array
     {
         return [
-            RelationManagers\SectionRelationManager::class,
+            //
         ];
     }
 
     public static function getPages(): array
     {
         return [
-            'index' => Pages\ListPages::route('/'),
-            'create' => Pages\CreatePage::route('/create'),
-            'view' => Pages\ViewPage::route('/{record}'),
-            'edit' => Pages\EditPage::route('/{record}/edit'),
+            'index' => Pages\ListPricings::route('/'),
+            'create' => Pages\CreatePricing::route('/create'),
+            'edit' => Pages\EditPricing::route('/{record}/edit'),
         ];
     }
 }
