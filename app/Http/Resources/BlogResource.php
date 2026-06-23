@@ -25,6 +25,8 @@ class BlogResource extends JsonResource
             "blog_full_data" => $this->blog_data,
             "image" => env('APP_URL') . Storage::url($this->image),
             "slug" => $this->slug,
+            "type" => $this->type,
+            "author" => $this->author,
             "tags" => $this->tags,
             "keywords" => $this->keywords,
             "created_at" => $this->created_at,

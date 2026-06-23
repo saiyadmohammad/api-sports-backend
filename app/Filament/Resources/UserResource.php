@@ -47,6 +47,7 @@ class UserResource extends Resource
             ->columns([
                 TextColumn::make('name'),
                 TextColumn::make('email'),
+                TextColumn::make('role'),
             ])
             ->filters([
                 //
