@@ -4,8 +4,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\PageController;
-use App\Http\Controllers\Admin\HomePageController;
 use App\Http\Controllers\BlogController;
+use App\Http\Controllers\Auth\AuthController;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,15 +22,22 @@ use App\Http\Controllers\BlogController;
 Route::get('/page', [PageController::class, 'index']);
 Route::get('/page/{slug}', [PageController::class, 'getPage']);
 
-
 Route::get('/blogs', [BlogController::class, 'index']);
 Route::get('/blogs/{slug}', [BlogController::class, 'getBlog']);
 
 
 
 
+Route::post('/register', [AuthController::class, 'register']);
+Route::post('/login', [AuthController::class, 'login']);
 
-
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
+Route::middleware('auth:sanctum')->group(function () {
+    Route::get('/user', function(Request $request) {return $request->user();});
+    Route::post('/logout', [AuthController::class,'logout']);
 });
+
+
+
+// Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
+//     return $request->user();
+// });
