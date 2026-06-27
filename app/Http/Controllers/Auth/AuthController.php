@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Str;
 use App\Models\User;
 use Illuminate\Http\Request;
 
@@ -27,8 +28,13 @@ class AuthController extends Controller
         $token = $user->createToken('auth_token')->plainTextToken;
 
         return response()->json([
-            'token'=> $token,
-            'user' => $user,
+            'success' => true,
+            'message' => 'User Created Successfully',
+            'status' => 201,
+            'data' => [
+                'token' => $token,
+                'user' => $user,
+            ],
         ], 201);
     }
 
@@ -49,9 +55,65 @@ class AuthController extends Controller
         $token = $user->createToken('auth_token')->plainTextToken;
 
         return response()->json([
-            'token' => $token,
-            'user' => $user,
-        ]);
+            'success' => true,
+            'message' => 'User Created Successfully',
+            'status' => 201,
+            'data' => [
+                'token' => $token,
+                'user' => $user,
+            ],
+        ], 201);
+    }
+
+    public function loginWithGoogle(Request $request){
+        $test = explode(".", $request->token);
+        $test_2 = base64_decode($test[1]);
+        $data = json_decode($test_2);
+
+        $user = User::where('email',  $data->email)->first();
+
+        if(!$user){
+            $user = User::create([
+                'name'=> $data->name,
+                'email'=> $data->email,
+                'password'=> Hash::make(Str::password(12)),
+            ]);
+
+            $token = $user->createToken('auth_token')->plainTextToken;
+
+            return response()->json([
+                'success' => true,
+                'message' => 'User Created Successfully',
+                'status' => 201,
+                'data' => [
+                    'token' => $token,
+                    'user' => $user,
+                ],
+            ], 201);
+
+        }else{
+            $token = $user->createToken('auth_token')->plainTextToken;
+
+            return response()->json([
+                'success' => true,
+                'message' => 'User Created Successfully',
+                'status' => 201,
+                'data' => [
+                    'token' => $token,
+                    'user' => $user,
+                ],
+            ], 201);
+        }
+
+
+        // dd(gettype($test_2));
+
+        // $data = {
+        //     "name" : $test_2->name;
+        // }
+
+        // return $user;
+
     }
 
     public function logout(Request $request){
