@@ -49,7 +49,7 @@ class CricketPageSeeder extends Seeder
                         [
                             "id" => 2,
                             "title" => "250K",
-                            "subtitle" => "Matches / Year",
+                            "subtitle" => "Matches/Year",
                             "icon" => "FaCalendarAlt",
                             "iconPackage" => "react-icons/fa",
                         ],

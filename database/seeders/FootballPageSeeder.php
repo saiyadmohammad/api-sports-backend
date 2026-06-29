@@ -49,7 +49,7 @@ class FootballPageSeeder extends Seeder
                         [
                             "id" => 2,
                             "title" => "500K+",
-                            "subtitle" => "Matches / Month",
+                            "subtitle" => "Matches/Month",
                             "icon" => "FaCalendarAlt",
                             "iconPackage" => "react-icons/fa",
                         ],
